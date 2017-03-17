@@ -1,0 +1,23 @@
+<div class="row">
+	<div class="col-md-12">
+
+		<div class="alert alert-info"><b>List of Restaurants</b></div>
+		<div class="progress" ng-show="!vm.restaurants">
+		  <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+		    Loading data. Please wait........
+		  </div>
+		</div>
+
+		<ul class="list-group">
+			<li class="list-group-item" ng-repeat="restaurant in vm.restaurants | orderBy:'na'">
+				<a ng-href="#/menu/{{restaurant.id}}">
+					<h4 ng-bind="restaurant.na"></h4>
+					<span ng-bind="'('+ restaurant.cu +')'"></span>
+				</a>
+				
+			</li>
+		</ul>
+		
+	</div>
+</div>
+

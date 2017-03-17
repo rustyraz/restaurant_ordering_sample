@@ -1,0 +1,29 @@
+<div class="row">
+	<div class="col-md-12">
+
+		<div class="alert alert-info"><b><span ng-bind="vm.restaurant.name"></span></b></div>
+		<div class="progress" ng-show="!vm.restaurant">
+		  <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+		    Loading data. Please wait........
+		  </div>
+		</div>
+
+		<div class="panel panel-default" ng-repeat="cat in vm.restaurant.menu">
+			<div class="panel-heading">
+				<b ng-bind="cat.name"></b>
+			</div>
+			<div class="panel-body">
+				<ul class="list-group">
+					<li class="list-group-item" ng-repeat="item in cat.children">
+						<a href="#">
+							<strong ng-bind="item.name"></strong>
+						</a>
+						<b class="pull-right">$<span ng-bind="item.price"></span></b><br/>
+						 <em ng-bind="item.descrip"></em>
+					</li>
+				</ul>
+			</div>
+		</div>
+		
+	</div>
+</div>
